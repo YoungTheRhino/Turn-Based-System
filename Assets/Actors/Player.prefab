@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1512647285416406}
+  m_IsPrefabParent: 1
+--- !u!1 &1512647285416406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4352872684817410}
+  - component: {fileID: 114637414923279432}
+  - component: {fileID: 114983263280112756}
+  - component: {fileID: 114304359016131208}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4352872684817410
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1512647285416406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114304359016131208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1512647285416406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5dd6357fe55945ea80a1fc79372cf7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleManager: {fileID: 0}
+  attackList:
+  - name: BasicAttack
+    damage: 2
+    effectList: 
+  combatGUI: {fileID: 0}
+  targetEntities: []
+  attackObject: {fileID: 0}
+  target: {fileID: 0}
+  onEffects: 
+  attacking: 0
+  playerGUI: {fileID: 0}
+  stats: {fileID: 0}
+--- !u!114 &114637414923279432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1512647285416406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae185e60320cf46c5aa74b340b4d52ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 20
+    speed: 1
+    attack: 2
+  currentHealth: 12
+--- !u!114 &114983263280112756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1512647285416406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1e50996a29bea46aae082b5b8f95b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelCap: 0
+  levelStats:
+  - stats:
+      maxHealth: 1
+      speed: 1
+      attack: 1
+    requiredEXP: 10
+  - stats:
+      maxHealth: 0
+      speed: 0
+      attack: 0
+    requiredEXP: 20
+  - stats:
+      maxHealth: 0
+      speed: 0
+      attack: 0
+    requiredEXP: 30
+  - stats:
+      maxHealth: 0
+      speed: 0
+      attack: 0
+    requiredEXP: 40
+  - stats:
+      maxHealth: 0
+      speed: 0
+      attack: 0
+    requiredEXP: 50
+  currentLvl: 0
+  currentExperiencePoints: 0
