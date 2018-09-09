@@ -50,6 +50,10 @@ public class PlayerGUI : ActorGUI
                 playerScript.MenuAction(Select());
 
             }
+            else if (Input.GetKeyDown("backspace"))
+            {
+                BackMenu();
+            }
             yield return null;
         }
         
@@ -63,23 +67,45 @@ public class PlayerGUI : ActorGUI
             return 0;
         }
         MenuScript temp = menuStack.Peek();
-        if (temp.getIndexRef().OptionLength() == 0)
+        if(temp.OptionLength() == 0)
         {
-            print(menuStack.Count);
-            StopCoroutine(inputCoroutine);
-            while(menuStack.Count > 0)
-            {
-                menuStack.Pop().Deactivate();
-            }
-            return temp.selectValue;
+            return -1;
         }
-        else
+        int i = temp.getIndexRef().SelectOption();
+        switch(i)
         {
-            temp.Deactivate();
-            menuStack.Push(temp.Select());
-            menuStack.Peek().Activate();
-            return 0;
+            case 0: // subMenu is activated, turn not done yet
+                temp.Deactivate();
+                menuStack.Push(temp.ToNextMenu().subMenu);
+                menuStack.Peek().Activate();
+                break;
+
+            case -1:
+                BackMenu();
+                i = 0;
+                break;
+
+            default: //end is reached, no more submenus to traverse
+                StopCoroutine(inputCoroutine);
+                while (menuStack.Count > 0)
+                {
+                    menuStack.Pop().Deactivate();
+                }
+                break;
+
         }
 
+        return i;
+    }
+
+
+    void BackMenu()
+    {
+        if(menuStack.Count <= 1)
+        {
+            return;
+        }
+        menuStack.Pop().Deactivate();
+        menuStack.Peek().Activate();
     }
 }

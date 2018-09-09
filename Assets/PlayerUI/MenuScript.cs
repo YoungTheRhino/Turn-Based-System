@@ -3,46 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//menuitem
+
 public class MenuScript : MonoBehaviour {
 
-    public List<MenuScript> subMenus;
+    public bool dynamicFill;
+    public List<MenuOption> subMenus;//menuitems
+
     int menuIndex = 0;
-
-    public int selectValue = 0;
-
-    Text menuLabel; //highlight when hover
-    public Color hColor;
+    Image image;
+    //highlight when hover
+ 
 
 	// Use this for initialization
 	void Start () {
-        
-        foreach(Transform child in transform)
+
+        image = GetComponent<Image>();
+        if(dynamicFill)
         {
-            subMenus.Add(child.GetComponent<MenuScript>());
+
+            foreach (MenuOption m in GetComponentsInChildren<MenuOption>())
+            {
+                subMenus.Add(m);
+            }
         }
-        menuLabel = GetComponent<Text>();
 	}
 
 
-    public void HighlightText(bool b)
-    {
-        if(b)
-        {
-            menuLabel.color = hColor;
-        }
-        else{
-            menuLabel.color = Color.black;
-        }
-    }
 
     public void Activate()
     {
-        
+        image.enabled = true;
     }
 
     public void Deactivate()
     {
-        //turn display off
+        image.enabled = false;//turn display off
     }
 
     public void NavMenu(int dir){
@@ -57,7 +53,7 @@ public class MenuScript : MonoBehaviour {
         subMenus[menuIndex].HighlightText(true);
     }
 
-    public MenuScript Select()
+    public MenuOption ToNextMenu()
     {
         if(subMenus == null || subMenus.Count == 0)
         {
@@ -68,12 +64,14 @@ public class MenuScript : MonoBehaviour {
             return subMenus[menuIndex];    
         }
     }
+
+
 	
     public int OptionLength(){
         return subMenus.Count;
     }
 
-    public MenuScript getIndexRef()
+    public MenuOption getIndexRef()
     {
         return subMenus[menuIndex];
     }

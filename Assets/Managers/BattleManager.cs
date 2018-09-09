@@ -15,6 +15,8 @@ public enum AttackEnum
 public class BattleManager : MonoBehaviour {
 
 	public TurnManager turnManager;
+    public ItemManager itemManager;
+
 
 	public List<GameObject> playerList = new List<GameObject> ();
 	public List<GameObject> enemyList = new List<GameObject>();
@@ -36,6 +38,7 @@ public class BattleManager : MonoBehaviour {
 	void Start()
 	{
         turnManager.battleManager = this;
+        itemManager = GetComponent<ItemManager>();
 		StartCombat ();
 	}
 	public void StartCombat()
@@ -92,7 +95,8 @@ public class BattleManager : MonoBehaviour {
             activeEnemies.Remove(target);
             FinishCheck();
         }
-        
+
+        user.EndTurn();
     }
 
     void FinishCheck()

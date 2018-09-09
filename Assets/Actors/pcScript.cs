@@ -35,11 +35,15 @@ public class pcScript : EntityScript {
                 
                 break;
 
-            case 0:
-                return;
+            case 2:
+                //sub menu select item, return
                 break;
+
+            default:
+                return; //continue the menu
+
         }
-        EndTurn();
+        //reset menus
     }
 	// Update is called once per frame
 	public override void Update () {

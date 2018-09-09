@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{376B6068-B307-929E-A347-0ECAF1B07488}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ItemManager.cs">
+    <Files>
+      <File FileName="Assets/Managers/BattleManager.cs" Line="41" Column="51" />
+      <File FileName="Assets/Actors/pcScript.cs" Line="41" Column="1" />
+      <File FileName="Assets/StatusEffect.cs" Line="1" Column="1" />
+      <File FileName="Assets/PlayerUI/PlayerGUI.cs" Line="106" Column="20" />
+      <File FileName="Assets/PlayerUI/MenuScript.cs" Line="75" Column="6" />
+      <File FileName="Assets/MenuOption.cs" Line="49" Column="6" />
+      <File FileName="Assets/ItemManager.cs" Line="23" Column="12" />
+      <File FileName="Assets/Potion.cs" Line="11" Column="7" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
