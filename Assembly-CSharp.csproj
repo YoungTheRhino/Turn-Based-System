@@ -68,19 +68,19 @@
     <Compile Include="Assets\Actors\EntityScript.cs" />
     <Compile Include="Assets\Actors\EntityVariables.cs" />
     <Compile Include="Assets\Actors\pcScript.cs" />
-    <Compile Include="Assets\AttackEditorWindow.cs" />
-    <Compile Include="Assets\DamageEffect.cs" />
-    <Compile Include="Assets\ItemManager.cs" />
+    <Compile Include="Assets\AttackEffects\Generic\DamageEffect.cs" />
+    <Compile Include="Assets\AttackEffects\Generic\StatusEffect.cs" />
+    <Compile Include="Assets\AttackEffects\Generic\StatusLibrary.cs" />
+    <Compile Include="Assets\AttackEffects\Poison\PoisonEffect.cs" />
+    <Compile Include="Assets\ItemPrefabs\Potion\Potion.cs" />
     <Compile Include="Assets\Managers\BattleManager.cs" />
+    <Compile Include="Assets\Managers\ItemManager.cs" />
     <Compile Include="Assets\Managers\TurnManager.cs" />
-    <Compile Include="Assets\MenuOption.cs" />
+    <Compile Include="Assets\MIsc_\AttackEditorWindow.cs" />
     <Compile Include="Assets\PlayerStats.cs" />
     <Compile Include="Assets\PlayerUI\MenuScript.cs" />
     <Compile Include="Assets\PlayerUI\PlayerGUI.cs" />
-    <Compile Include="Assets\PoisonEffect.cs" />
-    <Compile Include="Assets\Potion.cs" />
-    <Compile Include="Assets\StatusEffect.cs" />
-    <Compile Include="Assets\StatusLibrary.cs" />
+    <Compile Include="Assets\UI\MenuOption.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/youngtherhino/Documents/Turn Based System/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
